@@ -1,4 +1,4 @@
-﻿namespace Ideal_classes
+﻿namespace Ideial_classes
 {
     partial class Form1
     {

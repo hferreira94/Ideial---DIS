@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ideal_classes.Properties
+namespace Ideial_classes.Properties
 {
 
 
