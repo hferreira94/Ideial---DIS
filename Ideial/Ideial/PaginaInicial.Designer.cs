@@ -1,6 +1,6 @@
-﻿namespace Ideial_classes
+﻿namespace Ideial
 {
-    partial class Form1
+    partial class PaginaInicial
     {
         /// <summary>
         /// Required designer variable.
@@ -34,32 +34,32 @@
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(77, 133);
+            this.login.Location = new System.Drawing.Point(138, 130);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(75, 23);
             this.login.TabIndex = 0;
             this.login.Text = "Login";
             this.login.UseVisualStyleBackColor = true;
-            this.login.Click += new System.EventHandler(this.login_Click);
             // 
             // registo
             // 
-            this.registo.Location = new System.Drawing.Point(271, 133);
+            this.registo.Location = new System.Drawing.Point(353, 129);
             this.registo.Name = "registo";
             this.registo.Size = new System.Drawing.Size(75, 23);
             this.registo.TabIndex = 1;
             this.registo.Text = "Registo";
             this.registo.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // PaginaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 348);
+            this.ClientSize = new System.Drawing.Size(689, 315);
             this.Controls.Add(this.registo);
             this.Controls.Add(this.login);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "PaginaInicial";
+            this.Text = "Página Inicial";
+            this.Load += new System.EventHandler(this.PaginaInicial_Load);
             this.ResumeLayout(false);
 
         }

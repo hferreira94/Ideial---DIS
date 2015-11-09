@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ideial_classes
+namespace Ideial
 {
-    public partial class Form1 : Form
+    public partial class PaginaInicial : Form
     {
-        public Form1()
+        public PaginaInicial()
         {
             InitializeComponent();
         }
 
-        private void login_Click(object sender, EventArgs e)
+        private void PaginaInicial_Load(object sender, EventArgs e)
         {
 
         }
