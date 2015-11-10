@@ -3,7 +3,7 @@
 namespace Ideial
 {
     public class Utilizador     
-    {//sync henrique
+    {
         private int id;
         private string nome;
         private string genero;
