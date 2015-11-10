@@ -2,7 +2,7 @@
 
 namespace Ideial
 {
-    public class Utilizador     //testando sincronização Joselyn-PC
+    public class Utilizador     
     {
         private int id;
         private string nome;
