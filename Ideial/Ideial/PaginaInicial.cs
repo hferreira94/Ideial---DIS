@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -113,6 +114,7 @@ namespace Ideial
         private void registar_Click(object sender, EventArgs e)
         {
             int valor = 0;
+            bool verifica = false;
             DataBase verificarRegisto = new DataBase();
             if (passwordRegisto.Text != passwordRegisto2.Text)
             {
@@ -120,7 +122,16 @@ namespace Ideial
             }
             else
             {
-                valor = verificarRegisto.Registo(utilizadorRegisto, passwordRegisto, email);
+                verifica = emailIsValid(email.Text);
+                if (verifica == true)
+                {
+                    valor = verificarRegisto.Registo(utilizadorRegisto, passwordRegisto, email);
+                }
+                else
+                {
+                    MessageBox.Show("Email Inválido!");
+                    EstadoRegisto();
+                }
             }           
             if (valor == 0)
             {
@@ -129,6 +140,27 @@ namespace Ideial
             else
             {
                 EstadoInicial();
+            }
+        }
+
+        public static bool emailIsValid(string email)
+        {
+            string expressao;
+            expressao = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expressao))
+            {
+                if (Regex.Replace(email, expressao, string.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
             }
         }
     }
