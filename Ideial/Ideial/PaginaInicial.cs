@@ -32,6 +32,7 @@ namespace Ideial
             utilizador.Visible = true;
             passwordLabel.Visible = true;
             password.Visible = true;
+            voltar.Visible = true;
         }
 
         private void entrar_Click(object sender, EventArgs e)
@@ -59,6 +60,13 @@ namespace Ideial
             voltar.Visible = false;
             registo.Visible = true;
             login.Visible = true;
+            utilizadorRegisto.Visible = false;
+            passwordRegisto.Visible = false;
+            passwordRegisto2.Visible = false;
+            email.Visible = false;
+            confirmarPasswordLabel.Visible = false;
+            emailLabel.Visible = false;
+            registar.Visible = false;
         }
 
         public void EstadoLogin()
@@ -70,6 +78,58 @@ namespace Ideial
             utilizador.Visible = true;
             passwordLabel.Visible = true;
             password.Visible = true;
+            voltar.Visible = true;
+        }
+
+        public void EstadoRegisto()
+        {
+            utilizadorLabel.Visible = true;
+            utilizador.Visible = false;
+            passwordLabel.Visible = true;
+            password.Visible = false;
+            entrar.Visible = false;
+            voltar.Visible = true;
+            registo.Visible = false;
+            login.Visible = false;
+            utilizadorRegisto.Visible = true;
+            passwordRegisto.Visible = true;
+            passwordRegisto2.Visible = true;
+            email.Visible = true;
+            confirmarPasswordLabel.Visible = true;
+            emailLabel.Visible = true;
+            registar.Visible = true;
+        }
+
+        private void voltar_Click(object sender, EventArgs e)
+        {
+            EstadoInicial();
+        }
+
+        private void registo_Click(object sender, EventArgs e)
+        {
+            EstadoRegisto();
+        }
+
+        private void registar_Click(object sender, EventArgs e)
+        {
+            int valor = 0;
+            DataBase verificarRegisto = new DataBase();
+            if (passwordRegisto.Text != passwordRegisto2.Text)
+            {
+                MessageBox.Show("Passwords introduzidas não combinam!");
+            }
+            else
+            {
+                valor = verificarRegisto.Registo(utilizadorRegisto, passwordRegisto, email);
+            }           
+            if (valor == 0)
+            {
+                EstadoRegisto();
+            }
+            else
+            {
+                EstadoInicial();
+            }
         }
     }
 }

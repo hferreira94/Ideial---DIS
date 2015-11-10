@@ -47,5 +47,28 @@ namespace Ideial
             }
             return valor;
         }
+
+
+        public int Registo(TextBox utilizador, TextBox password, TextBox email)
+        {
+            Conetar();
+            string query = "INSERT INTO conta(utilizador, email, password, utilizador_id, utilizador_organizacao_idorganizacao, utilizador_ranking_idranking) VALUES ('" + utilizador.Text + "','" + password.Text + "','" + email.Text + "',1,1,1);";
+            _cmdDataBase = new MySqlCommand(query, _conDataBase);
+            try
+            {
+                _conDataBase.Open();
+                _myReader = _cmdDataBase.ExecuteReader();
+                while (_myReader.Read())
+                {
+                }
+                MessageBox.Show("Registo Completo!");
+                _myReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return 1;
+        }
     }
 }
