@@ -1,7 +1,7 @@
 ﻿namespace Ideial
 {
     public class Campanha
-    { //sync surface henrique
+    { 
         private int id;
         private string nome;
         private string texto;
